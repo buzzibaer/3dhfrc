@@ -52,7 +52,7 @@ public class Lauch {
 		java.util.Properties props = readPropertiesFile();
 		logger.info("Properties = " + props);
 		int videoid = Integer.parseInt( props.getProperty(args[0], "1"));
-		logger.info("selcted video id from mapping = " + props);
+		logger.info("selcted video id from mapping = " + videoid);
 
 		// init TCP connection
 		client = initTcpClient();
