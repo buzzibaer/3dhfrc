@@ -43,20 +43,19 @@ public class Lauch {
 //		int exitCode = new CommandLine(new fancommands()).execute(args);
 //		System.exit(exitCode);
 
-		initLogger();
+		// Reading config file
+		java.util.Properties props = readPropertiesFile();
+		initLogger(props);
 
 		// Printing CommandLine Parameters
 		logger.info("Startparameter =  " + args[0]);
-
-		// Reading config file
-		java.util.Properties props = readPropertiesFile();
 		logger.info("Properties = " + props);
-		int videoid = Integer.parseInt( props.getProperty(args[0], "1"));
+		int videoid = Integer.parseInt(props.getProperty(args[0], "1"));
 		logger.info("selcted video id from mapping = " + videoid);
 
 		// init TCP connection
 		client = initTcpClient();
-		fan = new Fan(logger,client);
+		fan = new Fan(logger, client);
 
 		// single playback mode selection
 		fan.selectSingePlaybackMode();
@@ -87,24 +86,42 @@ public class Lauch {
 	 * 
 	 * @throws IOException
 	 */
-	private static void initLogger() throws IOException {
+	private static void initLogger(Properties probs) throws IOException {
 
-		logger.setLevel(Level.ALL);
-		Handler handler = new ConsoleHandler();
-		handler.setLevel(Level.ALL);
-		logger.addHandler(handler);
+		Level level;
 
-		Handler fileHandler = new FileHandler("fan.log");
-		fileHandler.setLevel(Level.ALL);
+		try {
+			level = Level.parse(probs.getProperty("loglevel"));
+		} catch (IllegalArgumentException e) {
+			// defaults to ALL
+			// default
+			level = Level.ALL;
+		}
 
-		logger.addHandler(fileHandler);
+		logger.setLevel(level);
+
+		String logHandler = probs.getProperty("loghandler", "file");
+
+		if (logHandler.equalsIgnoreCase("file")) {
+			Handler fileHandler = new FileHandler("fan.log");
+			fileHandler.setLevel(level);
+			logger.addHandler(fileHandler);
+		} else if (logHandler.equalsIgnoreCase("console")) {
+			Handler consolehandler = new ConsoleHandler();
+			consolehandler.setLevel(level);
+			logger.addHandler(consolehandler);
+		} else if (logHandler.equalsIgnoreCase("both")) {
+			Handler consolehandler = new ConsoleHandler();
+			consolehandler.setLevel(level);
+			logger.addHandler(consolehandler);
+			Handler fileHandler = new FileHandler("fan.log");
+			fileHandler.setLevel(level);
+			logger.addHandler(fileHandler);
+		}
 
 		logger.info("Starte");
 
 	}
-
-
-
 
 	/**
 	 * Opening a TCP channel to the WiFi Module on the 3D Fan
