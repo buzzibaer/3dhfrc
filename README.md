@@ -59,3 +59,18 @@ Add the following into your VPX lauch script:
 
 START /min "" /i /d "C:\tdhfrc\" java -jar tdhfrc.jar "[GAMENAME]"
 
+## How to configure the mapping between table and video for fan
+just go inside the tabletovideomapping.ini and add the mapping
+
+It looks like this:
+
+DarkPrincess=4
+
+Tron Legacy (Stern 2011)1.3f=8
+
+The talbe name is passed from PinUPPopper to the application from the variable [GAMENAME]
+
+You got this from your GameManager as showen here:
+
+
+
