@@ -20,3 +20,10 @@ I bought this device here: [AliExpress Link] (https://de.aliexpress.com/item/400
 But it seems kindly generic, so maybe it works also for other models
 
 Original Software for App and Desktop came from here >> https://huangbanjin.gitee.io/bergerh/
+
+## What does it do?
+This small cluecode application is getting a flipper table as commandline input and is than selection a corresponding pic / vid on the 3d holografic fan.
+
+## How does it work?
+You can add this to your PinUpPopper Launch configuration for VPX and pass the table name as parameter to this commandline.
+It will then select a specific vid / pic on your fan for this table
