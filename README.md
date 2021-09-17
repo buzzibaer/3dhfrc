@@ -71,6 +71,6 @@ Tron Legacy (Stern 2011)1.3f=8
 The talbe name is passed from PinUPPopper to the application from the variable [GAMENAME]
 
 You got this from your GameManager as showen here:
-
+![explain pic](https://github.com/buzzibaer/3dhfrc/blob/main/docmedia/install2.png)
 
 
