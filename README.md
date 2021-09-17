@@ -12,3 +12,4 @@ So if you going to load up the table "DarkPrinzess" a topper video is shown on t
 ## The Fan
 I bought this device here: [AliExpress Link] (https://de.aliexpress.com/item/4000579865125.html?spm=a2g0s.9042311.0.0.659e4c4dMc6T5K	)
 But it seems kindly generic, so maybe it works also for other models
+Original Software for App and Desktop came from here >> https://huangbanjin.gitee.io/bergerh/
