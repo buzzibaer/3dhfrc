@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.Scanner;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
@@ -26,7 +27,7 @@ import picocli.CommandLine;
 public class Lauch {
 
 	static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-	static TcpClient client;
+	static SimpleTcpClient client;
 	static Fan fan;
 
 	/**
@@ -40,6 +41,17 @@ public class Lauch {
 	 */
 	public static void main(String[] args) throws InterruptedException, SecurityException, IOException {
 
+		String gamename = "";
+
+		for (int i = 0; i < args.length; i++) {
+			gamename = gamename + args[i];
+			if (i < args.length) {
+				gamename = gamename + " ";
+			}
+		}
+
+		gamename = gamename.trim();
+
 //		int exitCode = new CommandLine(new fancommands()).execute(args);
 //		System.exit(exitCode);
 
@@ -48,10 +60,9 @@ public class Lauch {
 		initLogger(props);
 
 		// Printing CommandLine Parameters
-		logger.info("Startparameter =  " + args[0]);
+		logger.info("Startparameter =  " + gamename);
 		logger.info("Properties = " + props);
-		int videoid = Integer.parseInt(props.getProperty(args[0], "1"));
-		logger.info("selcted video id from mapping = " + videoid);
+		int videoid = Integer.parseInt(props.getProperty(gamename, "1"));
 
 		// init TCP connection
 		client = initTcpClient();
@@ -61,7 +72,10 @@ public class Lauch {
 		fan.selectSingePlaybackMode();
 
 		// select pic / video
+		logger.info("selcted game is >" + gamename + "< with id from mapping = >" + videoid + "<");
 		fan.selectVidForTable(videoid);
+
+		client.deleteSocket();
 
 		logger.info("Exit");
 		System.exit(0);
@@ -74,10 +88,29 @@ public class Lauch {
 	 * @throws IOException
 	 */
 	private static java.util.Properties readPropertiesFile() throws FileNotFoundException, IOException {
+
 		java.util.Properties props = new java.util.Properties();
-		java.io.FileInputStream fis = new java.io.FileInputStream(new java.io.File("tabletovideomapping.ini"));
-		props.load(fis);
-		fis.close();
+
+		File myObj = new File("tabletovideomapping.ini");
+		Scanner myReader = new Scanner(myObj);
+		while (myReader.hasNextLine()) {
+			String data = myReader.nextLine();
+			if (!data.startsWith("#")) {
+				int delimeterPos = data.lastIndexOf("=");
+				String key = data.substring(0, delimeterPos);
+				String value = data.substring(delimeterPos + 1);
+
+				System.out.println("Key = " + key + " Value = " + value);
+
+				props.setProperty(key, value);
+
+			}
+		}
+		myReader.close();
+
+//		java.io.FileInputStream fis = new java.io.FileInputStream(new java.io.File("tabletovideomapping.ini"));
+//		props.load(fis);
+//		fis.close();
 		return props;
 	}
 
@@ -128,8 +161,8 @@ public class Lauch {
 	 * 
 	 * @return
 	 */
-	private static TcpClient initTcpClient() {
-		TcpClient client = new TcpClient();
+	private static SimpleTcpClient initTcpClient() {
+		SimpleTcpClient client = new SimpleTcpClient();
 		logger.info("TCPClient created");
 		client.connSocket();
 		logger.info("Socket open");

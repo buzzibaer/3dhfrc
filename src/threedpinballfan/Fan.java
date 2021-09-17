@@ -5,9 +5,9 @@ import java.util.logging.Logger;
 public class Fan {
 
 	private static Logger logger;
-	private static TcpClient client;
+	private static SimpleTcpClient client;
 
-	public Fan(Logger logger, TcpClient client) {
+	public Fan(Logger logger, SimpleTcpClient client) {
 		Fan.logger = logger;
 		Fan.client = client;
 	}
@@ -35,7 +35,6 @@ public class Fan {
 		String playFile = UpLoadData.playFile(videoid);
 
 		client.send(playFile);
-		logger.info("DarkPrincess detected!");
 		logger.info("Command Send = playFile > " + playFile);
 	}
 
