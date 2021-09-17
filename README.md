@@ -30,28 +30,32 @@ It will then select a specific vid / pic on your fan for this table
 
 
 # Installation & precondition
-You need 3 files from here
-* 3dfan.bat
+You need 2 files from here
 * tdhfrc.jar
 * tabletovideomapping.ini
 and you should have a java runtime installed
 
 usually you will have one on your windows pc. This app has an quite old Java 1.8 compiler flag. Should run everywhere.
 
-
-## 3dfan.bat - the start script
-download the 3dfan.bat file and put it in your PinUPPopper Lauch directory
-
-In my case this is in C:\PinupPopper\Launch\3dfan.bat
-
 ## tdhfrc.jar - the application
-Download the app and put it in an folder called tdhfrc under your VirtualPinball installation directory.
+Download the app and put it in an folder.
 
-In my case it is in C:\Virtual Pinball\tdhfrc\tdhfrc.jar
+In my case it is in C:\tdhfrc\tdhfrc.jar
 
 ## tabletovideomapping.ini - the config file
 Download the tabletovideomapping.ini and put it in the same directory as the application.
 
-In an folder called tdhfrc under your VirtualPinball installation directory.
+In my case it is in C:\tdhfrc\tablevideomapping.ini
 
-In my case it is in C:\Virtual Pinball\tdhfrc\tablevideomapping.ini
+## How to configure PinUpPopper
+
+Startup your PinupPoper Setup.
+
+You should go here
+
+![explain pic](https://github.com/buzzibaer/3dhfrc/blob/main/docmedia/install.png)
+
+Add the following into your VPX lauch script:
+
+START /min "" /i /d "C:\tdhfrc\" java -jar tdhfrc.jar "[GAMENAME]"
+
