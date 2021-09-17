@@ -41,13 +41,17 @@ usually you will have one on your windows pc. This app has an quite old Java 1.8
 
 ## 3dfan.bat - the start script
 download the 3dfan.bat file and put it in your PinUPPopper Lauch directory
+
 In my case this is in C:\PinupPopper\Launch\3dfan.bat
 
 ## tdhfrc.jar - the application
 Download the app and put it in an folder called tdhfrc under your VirtualPinball installation directory.
+
 In my case it is in C:\Virtual Pinball\tdhfrc\tdhfrc.jar
 
 ## tabletovideomapping.ini - the config file
 Download the tabletovideomapping.ini and put it in the same directory as the application.
+
 In an folder called tdhfrc under your VirtualPinball installation directory.
+
 In my case it is in C:\Virtual Pinball\tdhfrc\tablevideomapping.ini
