@@ -24,6 +24,8 @@ Original Software for App and Desktop came from here >> https://huangbanjin.gite
 ## What does it do?
 This small cluecode application is getting a pinball table as commandline input and is than selection a corresponding pic / vid on the 3d holografic fan.
 
+If you want to see it in action look here = https://youtu.be/gSEaMVhVHcs
+
 ## How does it work?
 You can add this to your PinUpPopper Launch configuration for VPX and pass the table name as parameter to this commandline.
 It will then select a specific vid / pic on your fan for this table
