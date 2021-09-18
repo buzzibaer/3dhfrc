@@ -73,4 +73,12 @@ The talbe name is passed from PinUPPopper to the application from the variable [
 You got this from your GameManager as showen here:
 ![explain pic](https://github.com/buzzibaer/3dhfrc/blob/main/docmedia/install2.png)
 
+## Toubleshooting & Logging
+You can go up higher in the loglevel to see what is going on
+
+Have a look into the tabletovideomapping.ini there is also config for logging
+
+Log output folder is where you placed this application
+
+
 
