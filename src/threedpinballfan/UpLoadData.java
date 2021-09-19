@@ -1,6 +1,5 @@
 package threedpinballfan;
 
-// import com.googlecode.javacv.cpp.avutil;
 
 public class UpLoadData {
     private static final String DEFAULT_HAS_2_DATA_LENTH = "abe";
