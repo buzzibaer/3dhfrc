@@ -12,9 +12,6 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.sun.media.jfxmedia.events.NewFrameEvent;
-
-import picocli.CommandLine;
 
 /**
  * 
@@ -73,7 +70,7 @@ public class Lauch {
 
 		// select pic / video
 		logger.info("selcted game is >" + gamename + "< with id from mapping = >" + videoid + "<");
-		fan.selectVidForTable(videoid);
+		Fan.selectVidForTable(videoid);
 
 		client.deleteSocket();
 
