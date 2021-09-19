@@ -49,9 +49,6 @@ public class Lauch {
 
 		gamename = gamename.trim();
 
-//		int exitCode = new CommandLine(new fancommands()).execute(args);
-//		System.exit(exitCode);
-
 		// Reading config file
 		java.util.Properties props = readPropertiesFile();
 		initLogger(props);
@@ -71,6 +68,9 @@ public class Lauch {
 		// select pic / video
 		logger.info("selcted game is >" + gamename + "< with id from mapping = >" + videoid + "<");
 		Fan.selectVidForTable(videoid);
+		
+		//fetch video list test
+		//Fan.fetchVideoList();
 
 		client.deleteSocket();
 

@@ -30,15 +30,16 @@ public class SimpleTcpClient {
 					SimpleTcpClient.this.printWriter.print(str);
 					SimpleTcpClient.this.printWriter.flush();
 
-//                            TcpClient.this.dataInputStream.read();
-//                            String outputString = dataInputStream.toString();
-//                            System.out.println("DEBUG OUTPUT:");
-//                            System.out.println(outputString);
+
+//					String response = SimpleTcpClient.this.dataInputStream.readUTF();
+//					System.out.println("inputstream = " + response);
+					
 					return;
 				}
 			}
 //                    TcpClient.this.onFailResult("fail");
 		} catch (Exception e) {
+			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
 	};
@@ -60,7 +61,8 @@ public class SimpleTcpClient {
             this.socket = new Socket(this.serverIP, this.serverPort);
             this.socket.setSoTimeout(50000);
             this.socket.setTcpNoDelay(true);
-            this.socket.setKeepAlive(true);
+//            this.socket.setKeepAlive(true);
+            this.socket.setKeepAlive(false);
             this.printWriter = new PrintWriter(this.socket.getOutputStream(), true);
             this.dataInputStream = new DataInputStream(this.socket.getInputStream());
             if (this.socket.isConnected()) {

@@ -37,5 +37,13 @@ public class Fan {
 		client.send(playFile);
 		logger.info("Command Send = playFile > " + playFile);
 	}
+	
+	public static void fetchVideoList  () {
+		String fileList = UpLoadData.getFileList();
+
+		client.send(fileList);
+		logger.info("Command Send = getFileList > " + fileList);
+		
+	}
 
 }
