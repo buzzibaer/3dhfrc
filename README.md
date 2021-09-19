@@ -21,6 +21,21 @@ But it seems kindly generic, so maybe it works also for other models
 
 Original Software for App and Desktop came from here >> https://huangbanjin.gitee.io/bergerh/
 
+### configuring the fan to static ip
+this is needed if you want to have still internet for your cab
+
+the fan is pushing a standard gateway to your wlan adapter via dhcp and this is a problem if you do have ethernet or a second wlan adapter up and running for internet acess.
+we need to get rid of the gateway from the fan
+
+![explain pic](https://github.com/buzzibaer/3dhfrc/blob/main/docmedia/install3.png)
+
+Just disable DHCP on the WLAN Chip and set it to manual
+
+Your WLAN should have the IP = 192.168.4.2
+The Fan has the IP = 192.168.4.1
+
+Change your setup accordingly and your internet will run like charm :)
+
 ## What does it do?
 This small cluecode application is getting a pinball table as commandline input and is than selection a corresponding pic / vid on the 3d holografic fan.
 
