@@ -5,11 +5,28 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+
+/**
+ * 
+ * @author buzzibaer on github = https://github.com/buzzibaer
+ *
+ */
 public class SimpleTcpClient {
 
+	/**
+	 * IP address of the FAN
+	 * the fan is exposing its on wifi without crypto
+	 * it has always the same IP
+	 */
 	public static final String DEFUALT_SERVER_IP = "192.168.4.1";
+	
+	/**
+	 * Port to communicate with the fan
+	 * This is the Port on the fan, not on your client :)
+	 */
 	public static final int DEFUALT_SERVER_PORT = 5233;
 
+	
 	private String serverIP;
 	private int serverPort;
 	private PrintWriter printWriter;
@@ -22,6 +39,13 @@ public class SimpleTcpClient {
 		this.serverPort = DEFUALT_SERVER_PORT;
 	}
 
+	
+	/**
+	 * Method sends a specific command to the fan
+	 * this is a technical send method
+	 * just communication purposes
+	 * @param str a string representing the command for the fan
+	 */
 	public void send(final String str) {
 
 		try {
@@ -44,6 +68,9 @@ public class SimpleTcpClient {
 		}
 	};
 	
+	/**
+	 * method will try to establish communication to the fan
+	 */
 	public void connSocket() {
         try {
             if (this.printWriter != null) {
@@ -75,6 +102,10 @@ public class SimpleTcpClient {
         }
     }
 	
+	/**
+	 * closing communication to the fan
+	 * @throws IOException
+	 */
 	public void deleteSocket() throws IOException {
 		this.socket.close();
 	}

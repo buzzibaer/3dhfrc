@@ -12,19 +12,29 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 /**
  * 
  * Lauch class for selection of a specific video / picture on a 3d holografic
  * fan
  * 
- * @author buzzibaer
+ * @author buzzibaer on github = https://github.com/buzzibaer
  *
  */
 public class Lauch {
 
+	/**
+	 * Logger for complete application
+	 */
 	static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+	
+	/**
+	 * Communication to the 3d fan
+	 */
 	static SimpleTcpClient client;
+	
+	/**
+	 * represents the functionality of the fan
+	 */
 	static Fan fan;
 
 	/**
@@ -68,9 +78,9 @@ public class Lauch {
 		// select pic / video
 		logger.info("selcted game is >" + gamename + "< with id from mapping = >" + videoid + "<");
 		Fan.selectVidForTable(videoid);
-		
-		//fetch video list test
-		//Fan.fetchVideoList();
+
+		// fetch video list test
+		// Fan.fetchVideoList();
 
 		client.deleteSocket();
 
@@ -79,8 +89,8 @@ public class Lauch {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * reads the configuration .ini file into properties values to have them easy usable within the applikation
+	 * @return properties with all config items inside.
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */

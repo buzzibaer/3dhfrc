@@ -2,6 +2,12 @@ package threedpinballfan;
 
 import java.util.logging.Logger;
 
+
+/**
+ * Fan classs represents the 
+ * @author buzzibaer on github = https://github.com/buzzibaer
+ *
+ */
 public class Fan {
 
 	private static Logger logger;
@@ -38,6 +44,9 @@ public class Fan {
 		logger.info("Command Send = playFile > " + playFile);
 	}
 	
+	/**
+	 * method fetches the list of possible videos for playback from the fan
+	 */
 	public static void fetchVideoList  () {
 		String fileList = UpLoadData.getFileList();
 

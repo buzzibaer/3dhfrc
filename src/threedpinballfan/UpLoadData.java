@@ -1,6 +1,10 @@
 package threedpinballfan;
 
-
+/**
+ * 
+ * @author buzzibaer on github = https://github.com/buzzibaer
+ *
+ */
 public class UpLoadData {
     private static final String DEFAULT_HAS_2_DATA_LENTH = "abe";
     private static final String DEFAULT_NO_DATA_LENTH = "abc";
