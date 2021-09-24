@@ -97,5 +97,13 @@ Have a look into the tabletovideomapping.ini there is also config for logging
 
 Log output folder is where you placed this application
 
+## My PC will not connect automaticly to the FAN! Help!
+Yes, this is happening due to the FAN will propagate a public WLAN.
+Windows 10 will not connect automaticly to public wlan, even if autoconncet is enabled.
+See:
+![explain pic](https://github.com/buzzibaer/3dhfrc/blob/main/docmedia/install4.png)
+Source = https://appuals.com/windows-10-will-not-connect-to-wifi-automatically/
+
+
 
 
