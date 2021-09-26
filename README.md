@@ -36,6 +36,15 @@ The Fan has the IP = 192.168.4.1
 
 Change your setup accordingly and your internet will run like charm :)
 
+### USB Wlan Dongle - Why using a separete WLAN Dongle
+
+The China Fan is quite a cheap product an the software is shit.
+Since the FAN is propagating a OPEN Wlan you have to connect to, you dont want to have this in yoour private network environment.
+I bought a cheap usb wlan dongle for my cab windows pc and attaced this dongle exclusivly to the FAN.
+
+Configuration of FAN and Dongle is described below.
+
+
 ## What does it do?
 This small cluecode application is getting a pinball table as commandline input and is than selection a corresponding pic / vid on the 3d holografic fan.
 
