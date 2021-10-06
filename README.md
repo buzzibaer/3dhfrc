@@ -15,7 +15,9 @@ The idea ist that if i am going to load up a specific pinball table the fan has 
 So if you going to load up the table "DarkPrinzess" a topper video is shown on the fan for ambiente purposes.
 
 ## The Fan
-I bought this device here: [AliExpress Link] (https://de.aliexpress.com/item/4000579865125.html?spm=a2g0s.9042311.0.0.659e4c4dMc6T5K	)
+I bought this device here: [AliExpress Link] (https://de.aliexpress.com/item/4000579865125.html?spm=a2g0s.9042311.0.0.659e4c4dMc6T5K)
+
+![explain pic](https://github.com/buzzibaer/3dhfrc/blob/main/docmedia/install5.png)
 
 But it seems kindly generic, so maybe it works also for other models
 
