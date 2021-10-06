@@ -31,8 +31,13 @@ we need to get rid of the gateway from the fan
 
 Just disable DHCP on the WLAN Chip and set it to manual
 
-Your WLAN should have the IP = 192.168.4.2
 The Fan has the IP = 192.168.4.1
+
+Your WLAN Dongle / Net should have the IP = 192.168.4.2
+
+Your Subnet = 255.255.255.0
+
+Your Subnetmask = <EMPTY> Delete everything here
 
 Change your setup accordingly and your internet will run like charm :)
 
