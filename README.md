@@ -1,4 +1,4 @@
-# tdhfrc
+# TDHFRC - three d holografic fan remote control
 3D holografic fan remote controll for virtual pinball
 
 ## What is this for? The Problem!
@@ -23,7 +23,7 @@ But it seems kindly generic, so maybe it works also for other models
 
 Original Software for App and Desktop came from here >> https://huangbanjin.gitee.io/bergerh/
 
-### configuring the fan to static ip
+### Configuring the fan to static ip
 this is needed if you want to have still internet for your cab
 
 the fan is pushing a standard gateway to your wlan adapter via dhcp and this is a problem if you do have ethernet or a second wlan adapter up and running for internet acess.
