@@ -78,6 +78,8 @@ In my case it is in C:\tdhfrc\tdhfrc.jar
 ## tabletovideomapping.ini - the config file
 Download the tabletovideomapping.ini and put it in the same directory as the application.
 
+https://github.com/buzzibaer/3dhfrc/blob/main/release/tabletovideomapping.ini
+
 In my case it is in C:\tdhfrc\tablevideomapping.ini
 
 ## How to configure PinUpPopper
