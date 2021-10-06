@@ -97,9 +97,16 @@ just go inside the tabletovideomapping.ini and add the mapping
 
 It looks like this:
 
-DarkPrincess=4
-
-Tron Legacy (Stern 2011)1.3f=8
+```
+# Mappingfile for Tables to Video file index
+# Format:
+# <tablename>=<videoindex>
+# example : DarkPrincess=4
+default=1
+DarkPrincess=2
+Ghostbusters=3
+Tron Legacy (Stern 2011)1.3f=4
+```
 
 The talbe name is passed from PinUPPopper to the application from the variable [GAMENAME]
 
