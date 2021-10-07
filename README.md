@@ -1,3 +1,7 @@
+# DEPRECATED WARNING
+Newer easy version is here = https://github.com/buzzibaer/FanPlugin.Wrapper
+
+
 # TDHFRC - three d holografic fan remote control
 3D holografic fan remote controll for virtual pinball
 
