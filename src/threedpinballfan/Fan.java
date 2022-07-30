@@ -30,6 +30,12 @@ public class Fan {
 		client.send(playModelSingle);
 		logger.info("Command Send = playModelSingle > " + playModelSingle);
 	}
+	
+	public void selectLoopPlaybackMode() {
+		String playModelLoop = UpLoadData.playModelLoop();
+		client.send(playModelLoop);
+		logger.info("Command Send = playModelSingle > " + playModelLoop);
+	}
 
 	/**
 	 * Selection of specific table on the wifi fan

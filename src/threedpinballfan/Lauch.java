@@ -73,7 +73,12 @@ public class Lauch {
 		fan = new Fan(logger, client);
 
 		// single playback mode selection
-		fan.selectSingePlaybackMode();
+		boolean loopControl = Boolean.parseBoolean(props.getProperty("loopControl"));
+		if (loopControl) {
+			fan.selectSingePlaybackMode();
+		} else {
+			fan.selectLoopPlaybackMode();
+		}
 
 		// select pic / video
 		logger.info("selcted game is >" + gamename + "< with id from mapping = >" + videoid + "<");
